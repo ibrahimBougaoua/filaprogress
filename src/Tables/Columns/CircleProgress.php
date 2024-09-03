@@ -13,9 +13,10 @@ class CircleProgress extends Column
     public function hideProgressValue($canShow = false)
     {
         $this->canShow = $canShow;
+
         return $this;
     }
-    
+
     public function getCanShow(): bool
     {
         return $this->canShow;

@@ -2,9 +2,9 @@
 
 namespace IbrahimBougaoua\FilaProgress\Tests;
 
+use IbrahimBougaoua\FilaProgress\FilaProgressServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use IbrahimBougaoua\FilaProgress\FilaProgressServiceProvider;
 
 class TestCase extends Orchestra
 {

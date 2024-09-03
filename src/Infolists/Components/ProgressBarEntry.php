@@ -13,9 +13,10 @@ class ProgressBarEntry extends Entry
     public function hideProgressValue($canShow = false)
     {
         $this->canShow = $canShow;
+
         return $this;
     }
-    
+
     public function getCanShow(): bool
     {
         return $this->canShow;
