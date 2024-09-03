@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace IbrahimBougaoua\FilaProgress;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use IbrahimBougaoua\FilaProgress\Commands\FilaProgressCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilaProgressServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('filaprogress')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_migration_table_name_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_filaprogress_table')
+            ->hasCommand(FilaProgressCommand::class);
     }
 }
