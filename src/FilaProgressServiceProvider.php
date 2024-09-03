@@ -2,9 +2,9 @@
 
 namespace IbrahimBougaoua\FilaProgress;
 
+use IbrahimBougaoua\FilaProgress\Commands\FilaProgressCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use IbrahimBougaoua\FilaProgress\Commands\FilaProgressCommand;
 
 class FilaProgressServiceProvider extends PackageServiceProvider
 {
