@@ -1,19 +1,11 @@
-# This is my package filaprogress
+# The Progress Management Package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ibrahim-bougaoua/filaprogress.svg?style=flat-square)](https://packagist.org/packages/ibrahim-bougaoua/filaprogress)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ibrahim-bougaoua/filaprogress/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ibrahim-bougaoua/filaprogress/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ibrahim-bougaoua/filaprogress/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ibrahim-bougaoua/filaprogress/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ibrahim-bougaoua/filaprogress.svg?style=flat-square)](https://packagist.org/packages/ibrahim-bougaoua/filaprogress)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/filaprogress.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/filaprogress)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+The Progress Management Package for FilamentPHP provides a flexible and easy-to-use solution for tracking and visualizing progress within Filament admin panels. It includes custom Filament components for displaying linear and circular progress indicators directly in your admin interface. This package is designed to seamlessly integrate with Filament's existing tools, offering dynamic and customizable progress bars and circles to represent task completion, project milestones, or any metric that requires visual progress tracking. Perfect for enhancing the user experience in admin dashboards with intuitive, real-time progress displays.
 
 ## Installation
 
@@ -21,26 +13,6 @@ You can install the package via composer:
 
 ```bash
 composer require ibrahim-bougaoua/filaprogress
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filaprogress-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filaprogress-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
 ```
 
 Optionally, you can publish the views using
@@ -52,8 +24,53 @@ php artisan vendor:publish --tag="filaprogress-views"
 ## Usage
 
 ```php
-$filaProgress = new IbrahimBougaoua\FilaProgress();
-echo $filaProgress->echoPhrase('Hello, IbrahimBougaoua!');
+// For infolist
+return $infolist
+    ->schema([
+        CircleProgressEntry::make('circle')
+            ->getStateUsing(function ($record) {
+                $total = $record->items()->count();
+                $progress = $record->countPaidItems();
+                return [
+                    'total' => $total,
+                    'progress' => $progress,
+                ];
+            })
+            ->hideProgressValue(true),
+        ProgressBarEntry::make('bar')
+            ->getStateUsing(function ($record) {
+                $total = $record->items()->count();
+                $progress = $record->countPaidItems();
+                return [
+                    'total' => $total,
+                    'progress' => $progress,
+                ];
+            })
+            ->hideProgressValue(true),
+
+// For table
+return $table
+    ->columns([
+        CircleProgress::make('circle')
+            ->getStateUsing(function ($record) {
+                $total = $record->items()->count();
+                $progress = $record->countPaidItems();
+                return [
+                    'total' => $total,
+                    'progress' => $progress,
+                ];
+            })
+            ->hideProgressValue(true),
+        ProgressBar::make('bar')
+            ->getStateUsing(function ($record) {
+                $total = $record->items()->count();
+                $progress = $record->countPaidItems();
+                return [
+                    'total' => $total,
+                    'progress' => $progress,
+                ];
+            })
+            ->hideProgressValue(true),
 ```
 
 ## Testing
@@ -61,14 +78,6 @@ echo $filaProgress->echoPhrase('Hello, IbrahimBougaoua!');
 ```bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
