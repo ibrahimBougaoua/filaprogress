@@ -36,7 +36,7 @@ return $infolist
                     'progress' => $progress,
                 ];
             })
-            ->hideProgressValue(true),
+            ->hideProgressValue(),
         ProgressBarEntry::make('bar')
             ->getStateUsing(function ($record) {
                 $total = $record->items()->count();
@@ -46,7 +46,7 @@ return $infolist
                     'progress' => $progress,
                 ];
             })
-            ->hideProgressValue(true),
+            ->hideProgressValue(),
 
 // For table
 return $table
@@ -60,7 +60,7 @@ return $table
                     'progress' => $progress,
                 ];
             })
-            ->hideProgressValue(true),
+            ->hideProgressValue(),
         ProgressBar::make('bar')
             ->getStateUsing(function ($record) {
                 $total = $record->items()->count();
@@ -70,7 +70,7 @@ return $table
                     'progress' => $progress,
                 ];
             })
-            ->hideProgressValue(true),
+            ->hideProgressValue(),
 ```
 
 ## Testing
