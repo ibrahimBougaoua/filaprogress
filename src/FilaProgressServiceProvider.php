@@ -4,7 +4,6 @@ namespace IbrahimBougaoua\FilaProgress;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use IbrahimBougaoua\FilaProgress\Commands\FilaProgressCommand;
 
 class FilaProgressServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class FilaProgressServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('filaprogress')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_filaprogress_table')
-            ->hasCommand(FilaProgressCommand::class);
+            ->hasViews();
     }
 }
