@@ -1,4 +1,4 @@
-# The Progress Management Package
+# Progress indicators
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ibrahim-bougaoua/filaprogress.svg?style=flat-square)](https://packagist.org/packages/ibrahim-bougaoua/filaprogress)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ibrahim-bougaoua/filaprogress/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ibrahim-bougaoua/filaprogress/actions?query=workflow%3Arun-tests+branch%3Amain)
