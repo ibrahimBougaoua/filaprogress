@@ -7,6 +7,10 @@
 
 The Progress Management Package for FilamentPHP provides a flexible and easy-to-use solution for tracking and visualizing progress within Filament admin panels. It includes custom Filament components for displaying linear and circular progress indicators directly in your admin interface. This package is designed to seamlessly integrate with Filament's existing tools, offering dynamic and customizable progress bars and circles to represent task completion, project milestones, or any metric that requires visual progress tracking. Perfect for enhancing the user experience in admin dashboards with intuitive, real-time progress displays.
 
+<a href="https://youtu.be/n9A5FUWPWO8" target="_blank">Youtube Video</a>
+
+<br />
+
 [![Total Downloads](https://raw.githubusercontent.com/filamentphp/filamentphp.com/dec76a6d43253f6e5947b3bcb99370c5a2509760/content/plugins/images/ibrahim-bougaoua-filaprogress.jpg)](https://packagist.org/packages/ibrahim-bougaoua/filaprogress)
 
 ## Installation
