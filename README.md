@@ -31,6 +31,9 @@ php artisan vendor:publish --tag="filaprogress-views"
 
 ```php
 // For infolist
+use IbrahimBougaoua\FilaProgress\Infolists\Components\CircleProgressEntry;
+use IbrahimBougaoua\FilaProgress\Infolists\Components\ProgressBarEntry;
+
 return $infolist
     ->schema([
         CircleProgressEntry::make('circle')
@@ -54,7 +57,13 @@ return $infolist
             })
             ->hideProgressValue(),
 
+```
+
+```php
 // For table
+use IbrahimBougaoua\FilaProgress\Tables\Columns\CircleProgress;
+use IbrahimBougaoua\FilaProgress\Tables\Columns\ProgressBar;
+
 return $table
     ->columns([
         CircleProgress::make('circle')
