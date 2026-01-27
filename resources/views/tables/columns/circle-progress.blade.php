@@ -13,7 +13,11 @@
         $progressColor = '#e74c3c';
     }    
     
-    $displayProgress = $progress == 100 ? number_format($progress, 0) : number_format($progress, 2);
+    if ($column->getCanShowDecimals()) {
+        $displayProgress = $progress == 100 ? number_format($progress, 0) : number_format($progress, 2);
+    } else {
+        $displayProgress = number_format($progress, 0);
+    }
 @endphp
 
 <div class="progress-circle" style="

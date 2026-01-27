@@ -79,7 +79,8 @@ return $table
                     'progress' => $progress,
                 ];
             })
-            ->hideProgressValue(),
+            ->hideProgressValue()
+            ->hideDecimals(),
         ProgressBar::make('bar')
             ->getStateUsing(function ($record) {
                 $total = $record->items()->count();

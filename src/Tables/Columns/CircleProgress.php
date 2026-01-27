@@ -7,6 +7,7 @@ use Filament\Tables\Columns\Column;
 class CircleProgress extends Column
 {
     protected $canShow = true;
+    protected $canShowDecimals = true;
 
     protected string $view = 'filaprogress::tables.columns.circle-progress';
 
@@ -17,8 +18,20 @@ class CircleProgress extends Column
         return $this;
     }
 
+    public function hideDecimals($canShowDecimals = false)
+    {
+        $this->canShowDecimals = $canShowDecimals;
+
+        return $this;
+    }
+
     public function getCanShow(): bool
     {
         return $this->canShow;
+    }
+
+    public function getCanShowDecimals(): bool
+    {
+        return $this->canShowDecimals;
     }
 }
